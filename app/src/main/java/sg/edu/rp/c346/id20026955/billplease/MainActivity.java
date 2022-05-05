@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 String pax = editPax.getText().toString();
                 int NoOfPax = Integer.parseInt(pax);
                 String discount = editDiscount.getText().toString();
-                int dis = Integer.parseInt(discount);
+                double dis = Double.parseDouble(discount);
                 int selectedID = rgPayment.getCheckedRadioButtonId();
 
                 if (SVS.isChecked() == true && GST.isChecked() == false) {
