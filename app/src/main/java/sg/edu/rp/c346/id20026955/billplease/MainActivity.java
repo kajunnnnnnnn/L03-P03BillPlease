@@ -2,12 +2,14 @@ package sg.edu.rp.c346.id20026955.billplease;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,14 +43,23 @@ public class MainActivity extends AppCompatActivity {
         tvEachPay = findViewById(R.id.tvEachPays);
 
 
-
         btnSplit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String amt = editAmount.getText().toString();
                 double price=Double.parseDouble(amt);
+
+                if (price == 0 || price < 0){
+                    Toast.makeText(MainActivity.this, "Invalid input in Amount", Toast.LENGTH_SHORT).show();
+                }
+
                 String pax = editPax.getText().toString();
                 int NoOfPax = Integer.parseInt(pax);
+
+                if (NoOfPax == 0 || NoOfPax < 0){
+                    Toast.makeText(MainActivity.this, "Invalid input in No. Of Pax", Toast.LENGTH_SHORT).show();
+                }
+
                 String discount = editDiscount.getText().toString();
                 double dis = Double.parseDouble(discount);
                 int selectedID = rgPayment.getCheckedRadioButtonId();
