@@ -125,6 +125,8 @@ public class MainActivity extends AppCompatActivity {
                 editDiscount.setText("");
                 tvTotal.setText("");
                 tvEachPay.setText("");
+                SVS.setChecked(false);
+                GST.setChecked(false);
             }
         });
     }
